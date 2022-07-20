@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) =>
             display: 'flex',
             textAlign: 'center',
             alignItems: 'center',
-            width: '100%',
+            width: '80%',
             borderRadius: 1,
             bgcolor: 'background.paper',
             color: 'text.secondary',
@@ -18,11 +18,11 @@ const useStyles = makeStyles((theme) =>
             '& hr': {
                 mx: 1.5,
             },
-            marginLeft: 20,
+            marginLeft: 0,
             marginTop: 20,
-        },       
+        },
         img: {
-            width: 200,
+            width: '50%',
             paddingLeft: 50
         }
     })

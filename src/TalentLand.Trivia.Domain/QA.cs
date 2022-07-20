@@ -8,10 +8,10 @@ namespace TalentLand.Trivia.Domain
 
         public Guid QuestionId { get; set; }
 
-        public Guid AnswerId { get; set; }
+        public Guid? AnswerId { get; set; }
 
         public virtual Question Question { get; set; } = null!;
 
-        public virtual Answer Answer { get; set; } = null!;
+        public virtual Answer? Answer { get; set; } = null!;
     }
 }

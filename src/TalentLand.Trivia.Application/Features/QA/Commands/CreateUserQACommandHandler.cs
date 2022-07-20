@@ -33,7 +33,7 @@ namespace TalentLand.Trivia.Application.Features.QA.Commands
             //create user
             await _qaRepository.AddAsync(qa, cancellationToken);
 
-            var allQuestions = await _questionRepository.GetAllPagedQuestionsAsync(0, NUMBER_OF_QUESTIONS, 
+            var allQuestions = await _questionRepository.GetAllPagedQuestionsAsync(0, NUMBER_OF_QUESTIONS,
                 cancellationToken);
             var questionAnswered = allQuestions.FirstOrDefault(q => q.Id == qa.QuestionId);
 

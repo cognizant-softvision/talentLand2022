@@ -16,7 +16,7 @@ namespace TalentLand.Trivia.Application.Mappings
                 .ForMember(d => d.UserId, a => a.MapFrom(s => s.FirstOrDefault(p => p.Key == "userId").Value.ToString()))
                 .ForMember(d => d.InstanceId, a => a.MapFrom(s => s.FirstOrDefault(p => p.Key == "id").Value.ToString()))
                 .ForMember(d => d.QuestionId, a => a.MapFrom(s => s.FirstOrDefault(p => p.Key == "questionId").Value.ToString()))
-                .ForMember(d => d.AnswerId, a => a.MapFrom(s => s.FirstOrDefault(p => p.Key == "answerId").Value.ToString()))
+                .ForMember(d => d.AnswerId, a => a.MapFrom(s => string.IsNullOrEmpty(s.FirstOrDefault(p => p.Key == "answerId").Value.ToString()) ? null : s.FirstOrDefault(p => p.Key == "answerId").Value.ToString()))
                 .ForMember(d => d.QuestionNumber, a => a.MapFrom(s => s.FirstOrDefault(p => p.Key == "questionNumber").Value.ToString()));
 
             //Get User By Email and Ger Users

@@ -29,8 +29,8 @@ namespace TalentLand.Trivia.Application.Mappings
                 .ForMember(d => d.QA, a => a.MapFrom(s => s.QAs));
 
             CreateMap<ICollection<QA>, QAViewModel>()
-                .ForMember(d => d.NumberOfRightAnswers, a => a.MapFrom(s => s.Count(p=> p.Answer.IsCorrect)))
-                .ForMember(d => d.AnsweredDate, a => a.MapFrom(s => 
+                .ForMember(d => d.NumberOfRightAnswers, a => a.MapFrom(s => s.Count(p => p.Answer != null && p.Answer!.IsCorrect)))
+                .ForMember(d => d.AnsweredDate, a => a.MapFrom(s =>
                 (s.OrderByDescending(p => p.Question.Order).FirstOrDefault().CreationDate - s.OrderBy(p => p.Question.Order).FirstOrDefault().CreationDate).TotalSeconds));
 
             //Command Create User
@@ -42,7 +42,7 @@ namespace TalentLand.Trivia.Application.Mappings
 
             CreateMap<User, CreateUserViewModel>()
                 .ForMember(d => d.UserId, a => a.MapFrom(s => s.Id));
-            
+
         }
     }
 }

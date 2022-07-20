@@ -12,7 +12,7 @@ namespace TalentLand.Trivia.Application.Features.QA.Commands
 
         public Guid QuestionId { get; set; }
 
-        public Guid AnswerId { get; set; }
+        public Guid? AnswerId { get; set; }
 
         public int QuestionNumber { get; set; }
     }

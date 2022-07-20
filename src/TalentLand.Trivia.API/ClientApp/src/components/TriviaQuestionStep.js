@@ -1,7 +1,6 @@
 ﻿import { useState, useEffect } from 'react';
 import { Button, Radio, RadioGroup, FormLabel, FormControl, FormControlLabel, Typography } from '@mui/material';
 import Timeout from './Timeout';
-import Logo from './Logo';
 import createStyles from '@mui/styles/createStyles'
 import makeStyles from '@mui/styles/makeStyles'
 
@@ -61,6 +60,9 @@ const TriviaQuestionStep = ({ activeStep, question, nextStep }) => {
     }
 
     if (countdownTime === 0) {
+        setCountdownTime(-1);
+        nextStep(question.questionId, null)
+
         return (
             <Timeout />
         )

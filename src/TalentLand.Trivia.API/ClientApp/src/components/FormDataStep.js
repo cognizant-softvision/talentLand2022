@@ -94,28 +94,20 @@ const FormDataStep = ({ onSubmit, data, setData }) => {
             </CustomPaperItem>
             <CustomPaperItem>
                 <TextField
+                    required
                     className={classes.textField}
                     id="university-input"
                     name="university"
-                    label="Universidad"
+                    label="Universidad / Empresa"
                     type="text"
                     value={data.university}
                     onChange={handleInputChange}
+                    error={errors.university ? true : false}
+                    helperText={errors.email}
                     onBlur={handleBlur}
                 />
             </CustomPaperItem>
-            <CustomPaperItem>
-                <TextField
-                    className={classes.textField}
-                    id="company-input"
-                    name="company"
-                    label="Empresa"
-                    type="text"
-                    value={data.company}
-                    onChange={handleInputChange}
-                    onBlur={handleBlur}
-                />
-            </CustomPaperItem>
+
             <Button variant="contained" className={classes.button} type="submit"
                 disabled={!isValidForm}>
                 Comenzar con la trivia
