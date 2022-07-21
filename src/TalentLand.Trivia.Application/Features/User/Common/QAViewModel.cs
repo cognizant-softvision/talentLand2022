@@ -4,6 +4,6 @@
     {
         public int NumberOfRightAnswers { get; set; }
 
-        public int AnsweredDate { get; set; }
+        public decimal AnsweredDate { get; set; }
     }
 }
